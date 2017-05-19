@@ -4,6 +4,7 @@ shinyUI(fluidPage(
   
   titlePanel(h1("My Shiny App")),
   
+  
   sidebarLayout(
     
     sidebarPanel(
@@ -14,6 +15,12 @@ shinyUI(fluidPage(
       br(),
       br(),
       br(),
+      selectInput("select", label = h3("Choose a variable to display"), 
+                  choices = list("Percent White" = 1, "Percent Black" = 2,
+                                 "Percent Hispanic" = 3,  "Percent Asian" = 4), selected = 1),
+      
+      sliderInput("slider1", label = h3("Range of interest"),
+                  min = 0, max = 100, value = 0),
 
       img(src="bigorb.png", height = 72, width = 72),
       "shiny is a product of ", 
